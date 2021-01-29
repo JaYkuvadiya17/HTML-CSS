@@ -1,8 +1,151 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 	<title>INSTAGRAM LIKE ANIMATION</title>
-<link rel="stylesheet" href="style.css">
+<style>
+$gray-light: #ebebeb;
+$red: #f45b69;
+$blue-light: #59c3c3;
+$nav-width: 22.25rem;
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: $gray-light;
+    color: #4e6cba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.device {
+    background-color: #fff;
+    width: 403px;
+    height: 830px;
+    border-radius: 58px;
+    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.16), 0 16px 25px 0 rgba(0, 0, 0, 0.18),
+        inset 0 -6px 10px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 58.64px;
+}
+
+.screen {
+    background-color: #eef1f8;
+    position: relative;
+    overflow: hidden;
+    width: calc(100% - (18px * 2));
+    height: calc(100% - (18px * 2));
+    margin: 18px;
+    border-radius: 39px;
+
+    &:after {
+        background: #ffffff;
+        border-radius: 0 0 22px 22px;
+        content: '';
+        width: 200px;
+        height: 28px;
+        top: 0;
+        position: absolute;
+        left: 50%;
+        margin-left: -100px;
+        z-index: 2;
+    }
+}
+
+.screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    border: solid 1px $gray-light;
+    cursor: pointer;
+    position: inherit;
+    align-self: flex-end;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    transition: all 250ms ease;
+    border-radius: 0.25rem;
+}
+
+$heart-size: 100px;
+
+.heart {
+    background-color: $red;
+    display: inline-block;
+    height: $heart-size;
+    position: relative;
+    transform: rotate(-45deg);
+    opacity: 0;
+    width: $heart-size;
+    position: absolute;
+
+    &:before,
+    &:after {
+        content: '';
+        background-color: $red;
+        border-radius: 50%;
+        height: $heart-size;
+        position: absolute;
+        width: $heart-size;
+    }
+    &:before {
+        top: -($heart-size / 2);
+        left: 0;
+    }
+    &:after {
+        left: $heart-size / 2;
+        top: 0;
+    }
+}
+
+input[type='checkbox'] {
+    visibility: hidden;
+    position: absolute;
+
+    &:checked + label {
+        background-color: $red;
+        color: white;
+
+        & + .heart {
+            animation: like-heart-animation 1000ms ease-in-out;
+        }
+    }
+}
+
+@keyframes like-heart-animation {
+    15% {
+        opacity: 0.9;
+        transform: scale(1.2) rotate(-45deg);
+    }
+    30% {
+        transform: scale(0.95) rotate(-45deg);
+    }
+    45%,
+    80% {
+        opacity: 0.9;
+        transform: scale(1) rotate(-45deg);
+    }
+}
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+</style>
 </head>
 <body>
  <div class="device">
